@@ -1,0 +1,22 @@
+# Node modules
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs/
+*.log
+
+# Optional: OS-specific files (macOS, Windows)
+.DS_Store
+Thumbs.db
+
+# Optional: Dependency directories (in case you're using Yarn or other package managers)
+yarn.lock
+package-lock.json
+# Stop tracking the node_modules folder
+git rm -r --cached node_modules/
+
+# Stop tracking the .env file
+git rm --cached .env
