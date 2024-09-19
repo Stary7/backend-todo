@@ -42,3 +42,12 @@ exports.deleteTask = async (req, res) => {
     res.status(500).json({ error: 'Server error' });
   }
 };
+
+exports.getCompletedTasks = async (req, res) => {
+  try {
+    const tasks = await Task.find({ userId: req.user.id, completed: true });
+    res.json(tasks);
+  } catch (error) {
+    res.status(500).json({ error: 'Server error' });
+  }
+};

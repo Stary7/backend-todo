@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');
-const { getTasks, createTask, updateTask, deleteTask } = require('../controllers/taskController');
+const { getTasks, createTask, updateTask, deleteTask,getCompletedTasks } = require('../controllers/taskController');
 
 // @route GET /tasks
 // @desc Get all tasks for the authenticated user
@@ -23,5 +23,5 @@ router.put('/tasks/:id', authMiddleware, updateTask);
 // @desc Delete a task by ID
 // @access Private
 router.delete('/tasks/:id', authMiddleware, deleteTask);
-
+router.get('/completed', authMiddleware, getCompletedTasks);
 module.exports = router;
